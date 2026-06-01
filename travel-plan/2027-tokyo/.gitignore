@@ -1,8 +1,0 @@
-# Source files — 不上傳到 GitHub
-index.html
-build.sh
-_inline_tmp.html
-.staticrypt.json
-
-# Shared assets（inline 進加密檔，不需要個別上傳）
-../shared/
