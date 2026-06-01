@@ -39,15 +39,15 @@ PYEOF
 
 echo "🔒 步驟 2：staticrypt 加密（密碼藏在 URL hash）..."
 
-# 輸出到 _enc_out/ 子目錄，再搬到 OUT
-mkdir -p "$DIR/_enc_out"
-SHARE_HASH=$(staticrypt "$INLINE" \
+# Step A：加密，寫出檔案（不加 --share，避免 v3 只輸出 hash 不寫檔）
+cd "$DIR"
+mkdir -p _enc_out
+staticrypt "_inline_tmp.html" \
   --password "$PASSWORD" \
   --remember false \
-  --directory "$DIR/_enc_out" \
-  --share 2>&1 | grep "^#staticrypt_pwd=")
+  --directory "_enc_out" 2>&1
 
-ENCRYPTED="$DIR/_enc_out/$(basename "$INLINE")"
+ENCRYPTED="$DIR/_enc_out/_inline_tmp.html"
 if [ ! -f "$ENCRYPTED" ]; then
   echo "❌ 加密失敗：staticrypt 沒有產生輸出檔"
   echo "   請確認密碼長度 ≥ 14 字元，或檢查 staticrypt 是否正確安裝"
@@ -57,6 +57,13 @@ fi
 
 mv "$ENCRYPTED" "$OUT"
 rm -rf "$DIR/_enc_out"
+
+# Step B：用同一個 salt（存在 .staticrypt.json）取得 share hash
+SHARE_HASH=$(staticrypt "_inline_tmp.html" \
+  --password "$PASSWORD" \
+  --remember false \
+  --share 2>&1 | grep "^#staticrypt_pwd=")
+
 rm -f "$INLINE" "$DIR/.staticrypt.json"
 
 echo ""
