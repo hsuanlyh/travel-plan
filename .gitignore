@@ -1,8 +1,8 @@
 .DS_Store
 
 # Plain-text itinerary source — sensitive content, keep local only
-travel-plan/*/index.html
+*/index.html
 
 # staticrypt build artifacts
-travel-plan/**/_inline_tmp.html
-travel-plan/**/.staticrypt.json
+**/_inline_tmp.html
+**/.staticrypt.json
