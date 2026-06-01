@@ -1,0 +1,109 @@
+name: Apply Trip Suggestions
+
+on:
+  repository_dispatch:
+    types: [apply-suggestions]
+  workflow_dispatch:
+    inputs:
+      trip:
+        description: 'Trip folder name (e.g. 2026-kansai)'
+        required: true
+        default: '2026-kansai'
+      suggestions:
+        description: 'What to change (plain text)'
+        required: true
+      page_url:
+        description: 'Page URL for notification'
+        required: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic
+          npm install -g staticrypt
+
+      - name: Resolve inputs (support both workflow_dispatch and repository_dispatch)
+        id: inputs
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "trip=${{ github.event.inputs.trip }}" >> $GITHUB_OUTPUT
+            echo "page_url=${{ github.event.inputs.page_url }}" >> $GITHUB_OUTPUT
+            # wrap plain text as JSON array
+            python3 -c "import json,sys; print('suggestions=' + json.dumps([sys.argv[1]]))" \
+              "${{ github.event.inputs.suggestions }}" >> $GITHUB_OUTPUT
+          else
+            echo "trip=${{ github.event.client_payload.trip }}" >> $GITHUB_OUTPUT
+            echo "page_url=${{ github.event.client_payload.page_url }}" >> $GITHUB_OUTPUT
+            echo "suggestions=${{ toJson(github.event.client_payload.suggestions) }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Apply suggestions via Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUGGESTIONS: ${{ steps.inputs.outputs.suggestions }}
+          TRIP: ${{ steps.inputs.outputs.trip }}
+        run: python scripts/apply_suggestions.py
+
+      - name: Encrypt with staticrypt
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
+          TRIP: ${{ steps.inputs.outputs.trip }}
+        run: |
+          cd $TRIP
+          mkdir -p _enc_out
+          staticrypt _inline_tmp.html \
+            --password "$STATICRYPT_PASSWORD" \
+            --remember false \
+            --directory _enc_out
+          cp _enc_out/_inline_tmp.html index.html
+          rm -rf _enc_out _inline_tmp.html .staticrypt.json
+
+      - name: Commit and push
+        env:
+          TRIP: ${{ steps.inputs.outputs.trip }}
+        run: |
+          git config user.name "hsuanlyh"
+          git config user.email "yunhsuan.lyh@gmail.com"
+          git add -f $TRIP/index.html
+          git diff --cached --quiet || git commit -m "feat: apply trip suggestions from friends"
+          git push
+
+      - name: Notify on success
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_OWNER_CHAT_ID: ${{ secrets.TELEGRAM_OWNER_CHAT_ID }}
+          TRIP: ${{ steps.inputs.outputs.trip }}
+          PAGE_URL: ${{ steps.inputs.outputs.page_url }}
+        run: |
+          python - <<'PYEOF'
+          import os, urllib.request, json
+
+          token = os.environ['TELEGRAM_BOT_TOKEN']
+          chat_id = os.environ['TELEGRAM_OWNER_CHAT_ID']
+          trip = os.environ['TRIP']
+          page_url = os.environ.get('PAGE_URL', '')
+
+          msg = f"✅ 行程已更新並發布！\n🗺 {trip}\n🔗 {page_url}"
+          data = json.dumps({"chat_id": chat_id, "text": msg}).encode()
+          req = urllib.request.Request(
+              f"https://api.telegram.org/bot{token}/sendMessage",
+              data=data,
+              headers={"Content-Type": "application/json"}
+          )
+          urllib.request.urlopen(req)
+          PYEOF
