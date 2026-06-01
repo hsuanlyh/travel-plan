@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京阪 6 日行程 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1410;--ink2:#4a3f35;--ink3:#8a7b6e;--paper:#faf7f2;--paper2:#f2ede4;--paper3:#e8e0d2;--red:#c0392b;--gold:#b8860b;--blue:#2c5f8a;--green:#3d6b4f;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.8;}
+header{background:var(--ink);color:var(--paper);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,0.015) 40px,rgba(255,255,255,0.015) 41px);}
+.header-label{font-size:11px;letter-spacing:6px;color:var(--paper3);text-transform:uppercase;margin-bottom:20px;}
+header h1{font-family:'Noto Serif TC',serif;font-size:clamp(28px,5vw,52px);font-weight:700;letter-spacing:4px;line-height:1.2;margin-bottom:16px;}
+header h1 span{color:var(--red);}
+.header-sub{font-size:13px;color:var(--ink3);letter-spacing:3px;}
+.header-dates{display:inline-flex;gap:0;margin-top:28px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;}
+.header-dates span{padding:6px 20px;font-size:12px;letter-spacing:2px;color:var(--paper);}
+.header-dates span:first-child{background:var(--red);}
+.container{max-width:860px;margin:0 auto;padding:0 24px 80px;}
+
+/* Tabs CSS */
+.tabs-container { margin: 24px auto 0; max-width: 860px; padding: 0 24px; }
+.tabs { display: flex; overflow-x: auto; gap: 8px; border-bottom: 2px solid var(--paper3); padding-bottom: 2px; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 80px; background: transparent; border: none; padding: 12px 8px; color: var(--ink3); font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.3s; text-align: center; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+.tab-btn span { display: block; font-size: 11px; font-weight: 400; margin-top: 2px; }
+.tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+.tab-btn:hover:not(.active) { color: var(--ink); }
+.tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+.day-block{margin-top:40px;position:relative;}
+.day-block::before{content:'';position:absolute;left:52px;top:50px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--paper3),transparent);}
+.day-head{display:flex;align-items:flex-start;gap:24px;margin-bottom:4px;}
+.day-num{flex-shrink:0;width:52px;text-align:center;}
+.day-num .num{font-family:'Noto Serif TC',serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.day-num .label{font-size:9px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;display:block;margin-top:2px;}
+.day-meta{flex:1;padding-top:4px;}
+.day-date{font-size:12px;color:var(--ink3);letter-spacing:2px;margin-bottom:4px;}
+.day-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:600;line-height:1.3;}
+.day-title .hl{color:var(--red);}
+.hotel-tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink3);margin-top:8px;padding:3px 10px;background:var(--paper2);border-radius:2px;border:1px solid var(--paper3);text-decoration:none;}
+.hotel-tag:hover{color:var(--blue);border-color:var(--blue);}
+.timeline{margin-top:20px;padding-left:76px;}
+.tl-item{position:relative;margin-bottom:20px;padding:16px 18px;background:white;border-radius:3px;border:1px solid var(--paper3);border-left:3px solid var(--paper3);box-shadow:0 1px 4px rgba(0,0,0,0.04);transition:border-left-color 0.2s,box-shadow 0.2s;}
+.tl-item:hover{box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.tl-item::before{content:'';position:absolute;left:-28px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--paper3);border:2px solid var(--paper);}
+.tl-item.transport{border-left-color:var(--blue);}
+.tl-item.transport::before{background:var(--blue);}
+.tl-item.food{border-left-color:var(--gold);}
+.tl-item.food::before{background:var(--gold);}
+.tl-item.sight{border-left-color:var(--red);}
+.tl-item.sight::before{background:var(--red);}
+.tl-item.note{border-left-color:var(--green);background:#f7fbf8;}
+.tl-item.note::before{background:var(--green);}
+.tl-time{font-size:11px;letter-spacing:1px;color:var(--ink3);margin-bottom:4px;}
+.tl-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.tl-desc{font-size:13px;color:var(--ink2);line-height:1.7;}
+.tl-desc p+p{margin-top:6px;}
+.resto-card{margin-top:12px;padding:12px 14px;background:var(--paper2);border-radius:4px;border:1px solid var(--paper3);display:flex;align-items:flex-start;gap:12px;}
+.resto-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.resto-info{flex:1;min-width:0;}
+.resto-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.resto-name a{color:var(--ink);text-decoration:none;}
+.resto-name a:hover{color:var(--blue);}
+.resto-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.resto-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center;}
+.resto-tag{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500;letter-spacing:0.3px;}
+.tag-price{background:rgba(61,107,79,0.1);color:var(--green);}
+.tag-note{background:rgba(184,134,11,0.12);color:var(--gold);}
+.tag-warn{background:rgba(192,57,43,0.1);color:var(--red);}
+.map-btn{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--blue);text-decoration:none;padding:3px 9px;border:1px solid rgba(44,95,138,0.3);border-radius:2px;transition:all 0.2s;font-weight:400;}
+.map-btn:hover{background:var(--blue);color:white;border-color:var(--blue);}
+.map-btn svg{width:11px;height:11px;flex-shrink:0;}
+
+.transport-detail{margin-top:10px;padding:10px 14px;background:rgba(44,95,138,0.05);border-left:3px solid var(--blue);border-radius:0 3px 3px 0;font-size:12px;color:var(--ink2);line-height:1.8;}
+.transport-detail .tr-step{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;}
+.transport-detail .tr-step:last-child{margin-bottom:0;}
+.transport-detail .tr-icon{flex-shrink:0;font-size:13px;margin-top:1px;}
+.transport-detail .tr-text{flex:1;}
+.transport-detail .tr-time{color:var(--ink3);font-size:11px;margin-left:4px;}
+
+.warn-box{margin-top:12px;padding:10px 14px;background:rgba(192,57,43,0.06);border-left:3px solid var(--red);border-radius:0 2px 2px 0;font-size:12px;color:var(--red);line-height:1.6;}
+
+.yahoo-panel { margin: 16px 0 8px; background: #fff; border: 1px solid #d4d4d4; border-radius: 4px; font-family: 'Noto Sans TC', sans-serif; box-shadow: 0 1px 6px rgba(0,0,0,0.06); overflow: hidden; }
+
+.yahoo-context { padding: 9px 16px; background: var(--paper2); border-bottom: 1px solid var(--paper3); display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ink2); flex-wrap: wrap; }
+.yahoo-context .ctx-icon { font-size: 15px; flex-shrink: 0; }
+.yahoo-context .ctx-main { flex: 1; line-height: 1.6; }
+.yahoo-context .ctx-main strong { color: var(--ink); }
+.yahoo-context .ctx-badge { font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+.yahoo-context .ctx-badge.ok { background: rgba(61,107,79,0.12); color: var(--green); }
+.yahoo-context .ctx-badge.warn { background: rgba(192,57,43,0.1); color: var(--red); }
+
+.yahoo-header { padding: 12px 16px; background: #fff; border-bottom: 1px solid #e8e8e8; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+.yahoo-header-left { display: flex; align-items: baseline; gap: 4px; }
+.yahoo-time-big { font-size: 20px; font-weight: 700; color: #111; letter-spacing: -0.5px;}
+.yahoo-time-small { font-size: 13px; font-weight: 400; color: #333; margin-right: 4px;}
+.yahoo-arrow { color: #888; font-size: 14px; margin: 0 6px; }
+.yahoo-fare { font-size: 13px; font-weight: 500; color: #333; }
+.yahoo-fare-tag { background: #3d6b4f; color: white; padding: 1px 5px; font-size: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle;}
+.yahoo-meta { font-size: 12px; color: #555; width: 100%; margin-top: 8px; display: flex; gap: 14px; flex-wrap: wrap; }
+.yahoo-meta strong { color: #111; font-weight: 600; font-size: 13px; }
+
+.yahoo-after { padding: 9px 16px; background: var(--paper2); border-top: 1px solid var(--paper3); display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--ink2); flex-wrap: wrap; }
+.yahoo-after .af-steps { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.yahoo-after .af-step { display: flex; align-items: baseline; gap: 7px; }
+.yahoo-after .af-step span:first-child { flex-shrink: 0; font-size: 13px; }
+.yahoo-after .af-step .af-time { color: var(--ink3); font-size: 11px; margin-left: auto; white-space: nowrap; padding-left: 8px; }
+.yahoo-after .af-step strong { color: var(--ink); }
+
+.yahoo-body { padding: 12px 16px 4px; }
+.yahoo-row { display: flex; align-items: stretch; }
+.yahoo-time-col { width: 44px; flex-shrink: 0; padding-top: 2px; text-align: left; }
+.yahoo-time { font-size: 15px; font-weight: 700; color: #111; display: block; line-height: 1.1; letter-spacing:-0.5px; }
+.yahoo-action { font-size: 10px; color: #666; display: block; margin-top: 2px;}
+.yahoo-action.arr { background: #c694a5; color: white; border-radius: 2px; padding: 1px 3px; display: inline-block; margin-top: 4px;}
+
+.yahoo-line-col { width: 24px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; margin: 0 10px; }
+.yahoo-station-icon { width: 12px; height: 12px; background: white; border: 3px solid #999; border-radius: 50%; flex-shrink: 0; margin-top: 4px; z-index: 2; }
+.yahoo-line { flex: 1; width: 6px; margin-top: -6px; margin-bottom: -6px; z-index: 1; }
+
+.yahoo-content-col { flex: 1; padding-bottom: 16px; margin-top: -2px;}
+.yahoo-station-name { font-size: 16px; font-weight: 700; color: #1059a3; display: flex; align-items: center; flex-wrap: wrap; line-height: 1.3;}
+.yahoo-arrival-meta { font-size: 12px; color: #333; margin-left: 8px; font-weight: 400; color: #555;}
+.yahoo-addr { font-size: 11px; color: #888; display: block; margin-top: 2px;}
+
+.yahoo-transit-details { margin-top: 8px; display: flex; gap: 12px; align-items: flex-start;}
+.yahoo-duration-dist { width: 42px; flex-shrink:0; text-align: right; font-size: 11px; color: #888; line-height: 1.4; padding-top: 6px; }
+.yahoo-duration-dist span { display: block; font-size: 13px; color: #333; font-weight: 500;}
+
+.yahoo-train-info { flex: 1; background: #f9f9f9; padding: 8px 10px; border-radius: 4px; }
+.yahoo-platform { display: inline-block; background: #666; color: white; font-size: 10px; padding: 2px 6px; border-radius: 2px; margin-bottom: 4px; }
+.yahoo-train-name { font-size: 13px; font-weight: 700; color: #222; display: block; line-height: 1.4;}
+.yahoo-train-dest { font-size: 11px; color: #666; display: block; margin-top: 2px; }
+
+/* Line Colors */
+.line-chuo { background-color: #249942; }
+.line-sakaisuji { background-color: #8c5024; }
+.line-walk { border-left: 4px dotted #aaa; background: transparent !important; width: 0 !important; margin-left: 3px !important; margin-right: 3px !important; }
+.line-jr { background-color: #0072e3; }
+.line-nankai { background-color: #f36c21; }
+.line-haruka { background-color: #1a4f9c; }
+.line-midosuji { background-color: #e5171f; }
+.line-karasuma { background-color: #4b8a3e; }
+.line-yumesaki { background-color: #00a2d2; }
+.line-kanjo { background-color: #f06422; }
+.line-bus { background-color: #009944; }
+.line-torokko { background-color: #d35d54; }
+
+/* yahoo-panel + tl-item gap */
+.yahoo-panel + .tl-item { margin-top: 8px; }
+
+.day-divider{display:none;}
+footer{background:var(--ink);color:var(--ink3);text-align:center;padding:32px;font-size:12px;letter-spacing:2px;margin-top:40px;}
+footer span{color:var(--red);}
+
+.navitime-btn { background: rgba(0,100,200,0.06); border-color: rgba(0,100,200,0.25); color: #0064c8; }
+.navitime-btn:hover { background: #0064c8; color: white; border-color: #0064c8; }
+.yahoo-after .map-btn, .yahoo-after .navitime-btn { margin-top: 6px; }
+
+.tz { display:inline-block; font-size:9px; font-weight:700; letter-spacing:0.3px;
+      padding:1px 4px; border-radius:2px; vertical-align:middle; margin:0 1px; line-height:1.6; }
+.tz-tw { background:rgba(0,150,136,0.12); color:#00796b; border:1px solid rgba(0,150,136,0.3); }
+.tz-jp { background:rgba(183,28,28,0.1); color:#b71c1c; border:1px solid rgba(183,28,28,0.25); }
+
+.flight-departure-bar { display: flex; align-items: center; gap: 12px; background: var(--paper2); border: 1px solid var(--paper3); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 13px; flex-wrap: wrap; }
+.fdb-plane { font-size: 20px; flex-shrink: 0; }
+.fdb-times { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex: 1; }
+.fdb-time-item { text-align: center; }
+.fdb-time-item strong { display: block; font-size: 16px; font-weight: 700; color: var(--ink); }
+.fdb-time-item span { font-size: 11px; color: var(--ink3); }
+.fdb-arrow { color: var(--ink3); font-size: 16px; }
+
+/* =========================================
+   Extracted from inline styles
+   ========================================= */
+
+/* Station icon variants */
+.yahoo-station-icon.arrival   { background: #e5171f; border-color: #e5171f; }
+.yahoo-station-icon.transfer  { background: #ccc; border: none; border-radius: 2px; height: 10px; width: 14px; }
+
+/* Station name: subway blue */
+.yahoo-station-name.subway,
+.subway { color: #1166b6; }
+
+/* Second departure time row */
+.yahoo-time.second-time { margin-top: 6px; }
+
+/* Navitime button wrapper */
+.yahoo-btn-row { padding: 6px 16px 10px; }
+
+/* Header flight info bar */
+.header-flights {
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--paper3);
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Header separator */
+.header-sep { color: rgba(255,255,255,0.2); }
+
+/* General margin-top 6px utility */
+.mt6 { margin-top: 6px; }
+
+/* Fare tag dark green variant */
+.yahoo-fare-tag.dark { background: #245b27; }
+
+/* Flight departure bar: status ok text */
+.fdb-ok { margin-left: auto; font-size: 11px; color: var(--green); font-weight: 600; }
+
+/* Warn box small text */
+.warn-small { font-size: 11px; opacity: 0.8; }
+
+/* Yahoo meta note (green small) */
+.meta-note { color: #3d6b4f; font-size: 11px; }
+
+</style>
+
+</head>
+<body>
+<header>
+<div class="header-label">Travel Itinerary</div>
+<h1>京都 <span>×</span> 大阪<br>六日行程</h1>
+<div class="header-sub">Kyoto · Osaka · 2026</div>
+<div class="header-dates"><span>7/16 — 7/21</span><span>6 天 5 夜</span></div>
+<div class="header-flights">
+  <span>✈ 去程 IT210 &nbsp;TPE 06:40<span class="tz tz-tw">台灣</span> → KIX 10:25<span class="tz tz-jp">日本</span></span>
+  <span class="header-sep">|</span>
+  <span>✈ 回程 IT213 &nbsp;KIX 19:50<span class="tz tz-jp">日本</span> → TPE</span>
+</div>
+</header>
+
+<div class="tabs-container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab(event, 'day1')">Day 1<span>7/16</span></button>
+    <button class="tab-btn" onclick="openTab(event, 'day2')">Day 2<span>7/17</span></button>
+    <button class="tab-btn" onclick="openTab(event, 'day3')">Day 3<span>7/18</span></button>
+    <button class="tab-btn" onclick="openTab(event, 'day4')">Day 4<span>7/19</span></button>
+    <button class="tab-btn" onclick="openTab(event, 'day5')">Day 5<span>7/20</span></button>
+    <button class="tab-btn" onclick="openTab(event, 'day6')">Day 6<span>7/21</span></button>
+  </div>
+</div>
+
+<div class="container"> 
+
+<div id="day1" class="tab-content active">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">01</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 16（四）</div>
+<div class="day-title">抵達京都 <span class="hl">×</span> 宵山夜祭</div>
+<div class="day-date" class="mt6">✈ IT210 — 桃園 06:40<span class="tz tz-tw">台灣</span> → 関西空港 10:25<span class="tz tz-jp">日本</span></div>
+<a href="https://www.google.com/maps/search/?api=1&query=Sakura+Terrace+The+Gallery+Kyoto" target="_blank" class="hotel-tag">🏨 京都 櫻花露臺畫廊酒店（Sakura Terrace The Gallery）（京都站八條西口（八条西口 / Hachijō Nishiguchi））</a>
+</div></div>
+<div class="timeline">
+
+<div class="yahoo-panel">
+  <div class="yahoo-context">
+    <span class="ctx-icon">✈</span>
+    <div class="ctx-main">
+      <strong>IT210</strong> 桃園 06:40<span class="tz tz-tw">台灣</span> 発 → 関西空港 10:25<span class="tz tz-jp">日本</span> 着（T1，行李轉盤 7）<br>
+      入境審查＋行李提領＋出關約需 <strong>60–90 分鐘</strong>，填好 Visit Japan Web 可走 KIOSK 快速通關
+    </div>
+    <span class="ctx-badge warn">⚠ 預留 90min 緩衝</span>
+  </div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">12:14</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">13:29</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>指定席 3,570円（7月旺季）</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>75分</strong></span>
+      <span>乗換 <strong>0回</strong></span>
+    </div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">12:14</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-haruka"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">関西空港</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>75分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">4番ホーム</span>
+            <span class="yahoo-train-name">特急はるか22号 京都行</span>
+            <span class="yahoo-train-dest">指定席推薦（行李大，提前預訂）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">13:29</span><span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon arrival"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">京都 <span class="yahoo-arrival-meta">八条西口</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="yahoo-after">
+    <div class="af-steps">
+      <div class="af-step"><span>🚶</span><span>出站步行 2 分鐘至飯店</span><span class="af-time">13:30</span></div>
+      <div class="af-step"><span>🧳</span><span>寄放行李（先不 Check-in）</span><span class="af-time">13:30–13:50</span></div>
+      <div class="af-step"><span>🚇</span><span>烏丸線 → 四条站，出發錦市場</span><span class="af-time">14:00</span></div>
+    </div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00001353&dnvStationCode=00001756&year=2026&month=7&day=16&hour=12&minute=0&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 京都→四条</a></div>
+</div>
+
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🚇</span><div class="ctx-main">飯店 → 四条駅 → 錦市場，徒步進場即可</div><span class="ctx-badge ok">3分</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">13:55</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">13:58</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 220円（IC 213円）</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>3分</strong></span><span>乗換 <strong>0回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">13:55</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-karasuma"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">京都（地下鉄）</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>3分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-platform">2番ホーム</span><span class="yahoo-train-name">京都市営烏丸線（国際会館行）</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">四条</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>出站步行 3 分鐘至錦市場東口</span><span class="af-time">14:00</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00001756&dnvStationCode=00003185&year=2026&month=7&day=16&hour=13&minute=55&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 京都→四条</a></div></div>
+</div>
+
+<div class="tl-item food">
+<div class="tl-time">14:00 — 15:30</div>
+<div class="tl-name">錦市場（錦市場 / Nishiki Ichiba）邊走邊吃（午餐）</div>
+<div class="tl-desc"><p>進錦市場邊逛邊吃，14:00 進去是最佳時機。沿路湊個五六樣小吃就是一頓午餐，完全不需要另找餐廳。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🐙</div>
+<div class="resto-info">
+<div class="resto-name">錦市場（錦市場 / Nishiki Ichiba）必吃清單</div>
+<div class="resto-desc">
+① <strong>こんなもんじゃ</strong> — 豆漿甜甜圈，現炸熱騰騰，¥450／6顆，最先去買趁新鮮吃<br>
+② <strong>三木鶏卵 or 錦平野</strong> — 出汁玉子燒，鰹魚昆布高湯，鬆軟清雅，京都代表小吃<br>
+③ <strong>カリカリ博士</strong> — 京風章魚燒，現做外酥內嫩<br>
+④ <strong>櫂 KAI</strong> — 章魚蛋（たこたまご），章魚頭包鵪鶉蛋，咬下去蛋黃流出，視覺衝擊<br>
+⑤ <strong>錦一葉</strong> — 賞味期限 1 分鐘的鯛魚燒，現烤現吃
+</div>
+<div class="resto-meta">
+<span class="resto-tag tag-warn">攤位 16:00–16:30 陸續打烊，14:00 準時進場</span>
+<span class="resto-tag tag-note">邊逛邊吃，店家前或座位區享用（禁止邊走邊吃）</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E5%B8%82%E5%A0%B4" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>錦市場（錦市場 / Nishiki Ichiba）地圖</a>
+</div></div></div>
+</div> <div class="tl-item sight">
+<div class="tl-time">15:30 — 17:00</div>
+<div class="tl-name">山鉾（日間拍照）</div>
+<div class="tl-desc"><p>錦市場（錦市場 / Nishiki Ichiba）吃完後，直接步行到四條烏丸十字路口拍山鉾白天版，白天可以清楚看到車上的華麗織品細節。14:00–16:00 是全天最熱時段，拍照控制在 15 分鐘內，拍完立刻鑽進有空調的店家或便利商店補水。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🍩</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%82%93%E3%81%AA%E3%82%82%E3%82%93%E3%81%98%E3%82%83+%E9%8C%A6%E5%B8%82%E5%A0%B4" target="_blank">こんな門じゃ（錦市場（錦市場 / Nishiki Ichiba））— 豆漿甜甜圈</a></div>
+<div class="resto-desc">錦市場（錦市場 / Nishiki Ichiba）人氣攤，豆漿現炸甜甜圈 6 顆 450 日圓，熱騰騰剛出爐，鬆軟帶豆香，錦市場（錦市場 / Nishiki Ichiba）散步零食首選。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥450（6顆）</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%82%93%E3%81%AA%E3%82%82%E3%82%93%E3%81%98%E3%82%83+%E9%8C%A6%E5%B8%82%E5%A0%B4" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> <div class="tl-item food">
+<div class="tl-time">17:00 — 21:00</div>
+<div class="tl-name">宵山點燈 → 屋台小吃 → 晚餐 → 超市採購</div>
+<div class="tl-desc"><p>天色漸暗後無縫接軌宵山夜祭，感受封街逛屋台的氣氛。晚餐選在四條烏丸附近。晚餐後搭地鐵回程前，順路進旁邊的 Life 超市掃京都限定調味料和零食伴手禮，開到午夜不用趕。
+<div class="transport-detail">
+  <div class="tr-step"><span class="tr-icon">🚇</span><div class="tr-text">宵山結束後：四条駅 → 地下鉄烏丸線 → 京都駅（京都站）<span class="tr-time">約 3 分／¥230</span></div></div>
+  <div class="tr-step"><span class="tr-icon">🚶</span><div class="tr-text">京都駅 八条西口 → 飯店<span class="tr-time">徒步約 2 分</span></div></div>
+</div></p></div>
+<div class="resto-card">
+<div class="resto-icon">🍶</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%94%E3%81%AE+%E5%9B%9B%E6%9D%A1%E7%83%8F%E4%B8%B8%E5%BA%97" target="_blank">しごの 四條烏丸店</a></div>
+<div class="resto-desc">評分 4.5 的在地居酒屋，炸麻糬配義式火腿被多名食客評為「此生最好吃之一」，食材新鮮、員工親切，完全不像觀光陷阱，宵山後的最佳選擇。週六 16:00 開始，建議提早入座避開宵山後人潮。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥2,000–3,500/人</span>
+<span class="resto-tag tag-note">每週五晚開到 23:00，週六日 16:00–23:00</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%94%E3%81%AE+%E5%9B%9B%E6%9D%A1%E7%83%8F%E4%B8%B8%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+<div class="resto-card">
+<div class="resto-icon">🛒</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%82%A4%E3%83%95%E5%9B%9B%E6%9D%A1%E7%83%8F%E4%B8%B8%E5%BA%97" target="_blank">Life 超市 四條烏丸店（ライフ四条烏丸店 / Life Shijō-Karasuma）（晚餐後順路）</a></div>
+<div class="resto-desc">四條烏丸站步行 2 分鐘，在地連鎖超市，京都限定商品多，推薦：西京白味噌、柚子胡椒、七味粉（七味家）、京都風醬油、抹茶零食、柿種仙貝等。調味料記得確認液體是否符合手提行李規定，建議放託運。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-note">09:30–00:00（午夜），晚餐後有充裕時間</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%82%A4%E3%83%95%E5%9B%9B%E6%9D%A1%E7%83%8F%E4%B8%B8%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> </div></div>
+</div>
+
+<div id="day2" class="tab-content">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">02</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 17（五）</div>
+<div class="day-title">山鉾巡行 <span class="hl">×</span> 金閣寺（金閣寺 / Kinkaku-ji） <span class="hl">×</span> 嵐山小火車</div>
+<a href="https://www.google.com/maps/search/?api=1&query=Sakura+Terrace+The+Gallery+Kyoto" target="_blank" class="hotel-tag">🏨 京都 櫻花露臺畫廊酒店（Sakura Terrace The Gallery）</a>
+</div></div>
+<div class="timeline">
+
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🚇</span><div class="ctx-main">飯店 → 四条站 → 四條烏丸十字路口（步行 3 分鐘）</div><span class="ctx-badge warn">早出發</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">08:40</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">08:43</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 220円（IC 213円）</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>3分</strong></span><span>乗換 <strong>0回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">08:40</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-karasuma"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">京都（地下鉄）</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>3分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-platform">2番ホーム</span><span class="yahoo-train-name">京都市営烏丸線（国際会館行）</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">四条</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>步行 3 分鐘至四條烏丸十字路口</span><span class="af-time">08:50</span></div>
+    <div class="af-step"><span>🎏</span><span>09:00 山鉾巡行出発，看 15 分鐘即撤退</span><span class="af-time">09:00</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00001756&dnvStationCode=00003185&year=2026&month=7&day=17&hour=8&minute=40&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 京都→四条</a></div></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">08:50 — 09:20</div>
+<div class="tl-name">山鉾巡行（前祭）快閃</div>
+<div class="tl-desc"><p>09:00 隊伍出發，看 10–15 分鐘感受氣氛即撤退，避開龐大人潮。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%9B%9B%E6%9D%A1%E7%83%8F%E4%B8%B8" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>四條烏丸地圖</a>
+</div> 
+
+<div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">09:30</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">10:00</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 490円</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>30分</strong></span>
+      <span>乗換 <strong>1回</strong></span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">09:30</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-karasuma"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">四条</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>9分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">京都市営烏丸線 (国際会館行)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">09:39</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">09:45</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-bus"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">北大路</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>15分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">京都市営バス 204/205号</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">10:00</span><span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon arrival"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">金閣寺道</div>
+      </div>
+    </div>
+  </div>
+  <div class="yahoo-after">
+    <div class="af-steps">
+      <div class="af-step"><span>🚶</span><span>步行約 10 分鐘至金閣寺入口（可先在北大路用早餐）</span><span class="af-time">10:00</span></div>
+    </div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00001756&dnvStationCode=00003185&year=2026&month=7&day=17&hour=8&minute=40&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 四条→金閣寺道</a></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">09:30 — 12:00</div>
+<div class="tl-name">金閣寺（金閣寺 / Kinkaku-ji）</div>
+<div class="tl-desc"><p>早上光線拍金閣最美，逛完步行回北大路站周邊用午餐。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E9%96%A3%E5%AF%BA" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>金閣寺（金閣寺 / Kinkaku-ji）地圖</a>
+</div> <div class="tl-item food">
+<div class="tl-time">12:00 — 13:00</div>
+<div class="tl-name">午餐（北大路周邊）</div>
+<div class="tl-desc"><p>北大路站周邊用餐，把最熱的正午時段坐掉。</p></div>
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🚂</span><div class="ctx-main">午餐後從北大路出發，前往嵐山竹林</div><span class="ctx-badge ok">乗換1回</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">13:10</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">14:12</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 500円（烏丸線 260円＋JR 240円）</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>62分</strong></span><span>乗換 <strong>1回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">13:10</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon transfer"></div><div class="yahoo-line line-karasuma"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name">北大路</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>14分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-platform">1番ホーム</span><span class="yahoo-train-name">京都市営烏丸線（竹田行）</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"><span class="yahoo-time">13:24</span><span class="yahoo-action arr">着</span><span class="yahoo-time second-time">13:30</span><span class="yahoo-action">発</span></div><div class="yahoo-line-col"><div class="yahoo-station-icon transfer"></div><div class="yahoo-line line-jr"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name">京都</div></div></div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">13:30</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-jr"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">京都</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>17分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-platform">33番ホーム</span><span class="yahoo-train-name">JR嵯峨野線（亀岡行）</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">嵯峨嵐山</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>出站即嵐山，步行 5 分鐘至竹林小徑入口</span><span class="af-time">14:15</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00003185&dnvStationCode=00101521&year=2026&month=7&day=17&hour=9&minute=30&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 北大路→嵯峨嵐山</a></div></div>
+</div>
+
+<div class="resto-card">
+<div class="resto-icon">🍱</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%AE%E3%81%B6%E9%A3%9F%E5%A0%82+%E5%8C%97%E5%A4%A7%E8%B7%AF" target="_blank">しのぶ食堂（北大路周邊）</a></div>
+<div class="resto-desc">在地媽媽口味的溫馨小食堂，每日更換定食內容，炸雞、照燒等家庭料理 900 日圓起，米飯好吃、味噌湯料多，氛圍安靜舒適，完全適合觀光客中途休息補充體力。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥900–1,200</span>
+<span class="resto-tag tag-note">週一公休；週三僅午市 11:30–14:00</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%81%AE%E3%81%B6%E9%A3%9F%E5%A0%82+%E5%8C%97%E5%A4%A7%E8%B7%AF" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">14:15 — 16:00</div>
+<div class="tl-name">竹林小徑（竹林の小径 / Chikurin no Komichi） → 甜點休息 → 渡月橋（渡月橋 / Togetsu-kyō）</div>
+<div class="tl-desc"><p>出 JR 嵯峨嵐山站（嵯峨嵐山駅 / Saga-Arashiyama Eki）後先快走竹林小徑（竹林の小径 / Chikurin no Komichi）（竹子有遮蔭但悶熱，控制在 20 分鐘內），接著立刻進嵐山野村坐下來吃甜點吹冷氣休息。渡月橋（渡月橋 / Togetsu-kyō）無遮蔭，等到 15:30 後太陽偏西再去拍，快拍快走 5 分鐘即可。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🍡</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E5%B5%90%E5%B1%B1+%E9%87%8E%E6%9D%91+Arashiyama+Nomura" target="_blank">【首選】嵐山 野村（Arashiyama Nomura）</a></div>
+<div class="resto-desc">嵐山隱藏名店，日式庭園座位面河，推薦冰ぜんざい（紅豆刨冰）和白玉甜品，安靜遠離主街人潮，是炎夏嵐山散策最佳歇腳處，評分 4.4。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥800–1,500</span>
+<span class="resto-tag tag-warn">週二、三公休</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%B5%90%E5%B1%B1+%E9%87%8E%E6%9D%91+Arashiyama+Nomura" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+<div class="resto-card">
+<div class="resto-icon">🍵</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=eXcafe+%E5%B5%90%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank">【備案】eXcafe 嵐山本店</a></div>
+<div class="resto-desc">評分 4.6 的嵐山人氣咖啡館，古民家改裝、附日式庭園，招牌是自己用炭火烤糰子，室內有冷氣座位，離竹林 2 分鐘步行距離，野村公休時的完美替代方案。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥800–1,500</span>
+<span class="resto-tag tag-note">每天 09:00–18:00，全年無休</span>
+<a href="https://www.google.com/maps/search/?api=1&query=eXcafe+%E5%B5%90%E5%B1%B1%E6%9C%AC%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> 
+
+<div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">16:15</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">16:40</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 880円</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>25分</strong></span>
+      <span>乗換 <strong>0回</strong></span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">16:15</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-torokko"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">トロッコ嵐山</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>25分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">嵯峨野観光鉄道 (トロッコ亀岡行)</span>
+            <span class="yahoo-train-dest">絕景觀光列車</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">16:40</span><span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon arrival"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">トロッコ亀岡</div>
+      </div>
+    </div>
+  </div>
+  <div class="yahoo-after">
+    <div class="af-steps">
+      <div class="af-step"><span>🚶</span><span>步行 10 分鐘至 JR 馬堀站 → 嵯峨野線回京都</span><span class="af-time">16:40</span></div>
+    </div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00008368&dnvStationCode=00002803&year=2026&month=7&day=17&hour=13&minute=10&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 馬堀→京都</a></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">16:15 — 17:15</div>
+<div class="tl-name">嵯峨野小火車（嵯峨野トロッコ列車 / Sagano Torokko Ressha）（嵐山 → 龜岡）</div>
+<div class="tl-desc"><p>步行至小火車嵐山站（トロッコ嵐山駅 / Torokko Arashiyama Eki）（トロッコ嵐山），沿保津川峽谷欣賞絕景前往龜岡站。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%83%88%E3%83%AD%E3%83%83%E3%82%B3%E5%B5%90%E5%B1%B1%E9%A7%85" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>小火車嵐山站（トロッコ嵐山駅 / Torokko Arashiyama Eki）</a>
+<div class="warn-box">⚠️ 7 月旺季非常搶票，請立即至官網預訂 16:00 左右班次</div>
+</div> 
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🚂</span><div class="ctx-main">トロッコ亀岡駅 → 步行 10 分鐘 → JR馬堀駅 → 嵯峨野線回京都</div><span class="ctx-badge ok">乗換なし</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">17:15</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">17:50</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 240円</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>35分</strong></span><span>乗換 <strong>0回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">17:15</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-jr"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">馬堀</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>25分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-train-name">JR嵯峨野線（京都行）</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">京都</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🏨</span><span>回京都站，晚餐前可逛 Yodobashi Camera</span><span class="af-time">17:50</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00007382&dnvStationCode=00001756&year=2026&month=7&day=17&hour=16&minute=40&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 馬堀→京都</a></div></div>
+</div>
+</div> 
+<div class="tl-item note">
+<div class="tl-time">19:00 — 19:30</div>
+<div class="tl-name">京都站緩衝：Yodobashi Camera（ヨドバシカメラ / Yodobashi Kamera）（室內冷氣）</div>
+<div class="tl-desc"><p>回到京都站後如果還有一點時間，旁邊的 Yodobashi Camera（ヨドバシカメラ / Yodobashi Kamera） 是絕佳避暑點，6 層樓全冷氣，從家電、相機、玩具到零食通通有，逛一圈就到晚餐時間了。京都站地下直通，完全不用曬太陽。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A8%E3%83%89%E3%83%90%E3%82%B7%E3%82%AB%E3%83%A1%E3%83%A9+%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E4%BA%AC%E9%83%BD" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div> <div class="tl-item food">
+<div class="tl-time">19:30 — 21:30</div>
+<div class="tl-name">晚餐（京都站周邊）</div>
+<div class="tl-desc"><p>回京都站附近燒肉慰勞辛苦的一天。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🥩</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E6%A0%BC%E7%84%BC%E8%82%89+%E3%83%81%E3%83%95%E3%82%A1%E3%82%B8%E3%83%A3+%E4%BA%AC%E9%83%BD%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank">YAKINIKU Chifaja 京都駅前店</a></div>
+<div class="resto-desc">京都站步行可達，評分 4.2、超過 1,700 則評論，備有中英文菜單，和牛大理石紋路豐富，含暢飲方案 CP 值超高，隔板包廂設計有隱私感。整趟旅程走到腿軟的最佳犒賞晚餐。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥3,000–5,000/人（含飲料）</span>
+<span class="resto-tag tag-note">11:00–00:30，不怕趕不到</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E6%A0%BC%E7%84%BC%E8%82%89+%E3%83%81%E3%83%95%E3%82%A1%E3%82%B8%E3%83%A3+%E4%BA%AC%E9%83%BD%E9%A7%85%E5%89%8D%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> </div></div>
+</div>
+
+<div id="day3" class="tab-content">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">03</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 18（六）</div>
+<div class="day-title">和服 <span class="hl">×</span> 清水寺（清水寺 / Kiyomizu-dera） <span class="hl">×</span> 移動大阪</div>
+<a href="https://www.google.com/maps/search/?api=1&query=FDS+Nexus+Osaka" target="_blank" class="hotel-tag">🏨 大阪 FDS Nexus（FDSネクサス）（天下茶屋站（天下茶屋駅 / Tengachaya Eki））</a>
+</div></div>
+<div class="timeline">
+
+<div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">17:00</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">18:20</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 970円</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>80分</strong></span>
+      <span>乗換 <strong>2回</strong></span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">17:00</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-jr"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">京都</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>29分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">4番ホーム</span>
+            <span class="yahoo-train-name">JR京都線新快速 (姫路行)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">17:29</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">17:35</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon transfer"></div>
+        <div class="yahoo-line line-kanjo"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">大阪</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>15分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">JR大阪環状線内回り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">17:50</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">17:55</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon transfer"></div>
+        <div class="yahoo-line line-nankai"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">新今宮</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>3分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">南海本線 (和歌山市行)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">17:58</span><span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon arrival"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name">天下茶屋</div>
+      </div>
+    </div>
+  </div>
+  <div class="yahoo-after">
+    <div class="af-steps">
+      <div class="af-step"><span>🏨</span><span>步行 3 分鐘入住 FDS Nexus，放下行李</span><span class="af-time">17:58</span></div>
+    </div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00007382&dnvStationCode=00001756&year=2026&month=7&day=17&hour=17&minute=15&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 京都→天下茶屋</a></div>
+</div>
+
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🚌</span><div class="ctx-main">京都駅前 → 市バス → 清水道・五条坂，換和服出發</div><span class="ctx-badge ok">20分</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">08:40</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">09:00</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>均一 230円（IC 218円）</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>20分</strong></span><span>乗換 <strong>0回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">08:40</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-bus"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">京都駅前（バス）</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>20分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-platform">D2のりば</span><span class="yahoo-train-name">市バス 206号（東山・北大路行）or 86号</span><span class="yahoo-train-dest">清水道・五条坂 下車</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">清水道</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>下車徒步 5 分鐘至和服店</span><span class="af-time">09:00</span></div>
+    <div class="af-step"><span>👘</span><span>09:00 換和服，展開清水寺路線</span><span class="af-time">09:00</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00001756&dnvStationCode=00006426&year=2026&month=7&day=18&hour=17&minute=0&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 京都駅前→清水道</a></div></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">09:00 — 13:00</div>
+<div class="tl-name">和服琉璃 × 清水寺（清水寺 / Kiyomizu-dera） × 二三年坂</div>
+<div class="tl-desc"><p>09:00 換和服，步行清水寺（清水寺 / Kiyomizu-dera）、二年坂（二年坂 / Ninenzaka）、三年坂（三年坂 / Sannenzaka）拍照。嵐山已移至 Day 2，今日可延伸到八坂神社（八坂神社 / Yasaka-jinja）更從容。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E6%B8%85%E6%B0%B4%E5%AF%BA" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>清水寺（清水寺 / Kiyomizu-dera）地圖</a>
+</div> <div class="tl-item food">
+<div class="tl-time">11:00 — 12:45</div>
+<div class="tl-name">還和服 → 午餐（清水寺（清水寺 / Kiyomizu-dera）旁，立刻躲進室內）</div>
+<div class="tl-desc"><p>11:00 還完和服，直接走去旁邊的奥丹用餐，不在戶外多待。正中午就讓冷氣和豆腐料理幫你恢復體力。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🍚</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A5%E4%B8%B9+%E6%B8%85%E6%B0%B4" target="_blank">奥丹 本店（清水寺（清水寺 / Kiyomizu-dera） 1635 年老鋪）</a></div>
+<div class="resto-desc">創業 1635 年，清水寺（清水寺 / Kiyomizu-dera）旁的百年豆腐料理老店，湯豆腐定食清淡優雅，也有親子丼和京野菜定食可選。木造老建築用餐氛圍絕佳，旺季建議提早到或事先確認開店時間。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥1,500–2,800</span>
+<span class="resto-tag tag-note">旺季可能需稍候排隊</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%A5%A5%E4%B8%B9+%E6%B8%85%E6%B0%B4" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> <div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🌡</span><div class="ctx-main">正午最熱，立刻撤進全室內冷氣的百貨</div><span class="ctx-badge warn">快逃！</span></div>
+  <div class="yahoo-header">
+    <div class="yahoo-header-left"><span class="yahoo-time-big">12:35</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">12:45</span><span class="yahoo-time-small">着</span></div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>均一 230円（IC 218円）</div>
+    <div class="yahoo-meta"><span>所要時間 <strong>10分</strong></span><span>乗換 <strong>0回</strong></span></div>
+  </div>
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col"><span class="yahoo-time">12:35</span><span class="yahoo-action">発</span></div>
+      <div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-bus"></div></div>
+      <div class="yahoo-content-col"><div class="yahoo-station-name subway">清水道（バス）</div>
+        <div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>10分</span></div>
+        <div class="yahoo-train-info"><span class="yahoo-train-name">市バス 207号（四条烏丸行）</span><span class="yahoo-train-dest">四条河原町 or 四条烏丸 下車</span></div></div></div>
+    </div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">四条</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🏬</span><span>步行 5 分鐘至高島屋 or 大丸，進去吹冷氣</span><span class="af-time">12:45</span></div>
+  </div>
+  <div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00056523&dnvStationCode=00046169&year=2026&month=7&day=18&hour=8&minute=40&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>乗換案内 清水道→四条烏丸</a></div></div>
+</div>
+
+<div class="tl-item note">
+<div class="tl-time">12:45 — 15:30</div>
+<div class="tl-name">室內避暑：京都高島屋 or 大丸百貨（四條）</div>
+<div class="tl-desc">
+<p>鑽進全室內冷氣的百貨公司度過正中午最熱的時段。</p>
+<p>高島屋地下食品街買伴手禮、試吃，上層有藥妝、生活雜貨、甜點廳，逛起來完全不無聊，而且省下移動大阪後才買的體力。</p>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E4%BA%AC%E9%83%BD%E9%AB%98%E5%B3%B6%E5%B1%8B" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>高島屋地圖</a>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E4%B8%B8%E4%BA%AC%E9%83%BD%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>大丸地圖</a>
+</div> <div class="tl-item sight">
+<div class="tl-time">15:30 — 16:00</div>
+<div class="tl-name">祇園花見小路（花見小路 / Hanamikōji）（太陽偏西後再出去）</div>
+<div class="tl-desc"><p>15:30 後太陽角度開始降低，體感溫度比正午少 3–4°C。花見小路（花見小路 / Hanamikōji）就一條短街，快走一圈拍照即可，不用久待，16:00 就出發回京都站取行李。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E8%A6%8B%E5%B0%8F%E8%B7%AF" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>花見小路（花見小路 / Hanamikōji）地圖</a>
+<div class="warn-box">☀️ 如果當天真的太熱或已經體力透支，跳過花見小路（花見小路 / Hanamikōji）也完全沒問題，直接回京都站取行李 → 提早移動大阪，晚上可以多休息。</div>
+</div> <div class="tl-item transport">
+<div class="tl-time">17:00 — 20:00</div>
+<div class="tl-name">返回京都站取行李 → 移動大阪 → 入住</div>
+<div class="tl-desc"><p>搭公車或地鐵回京都站取行李後，依 yahoo 交通卡路線移動至天下茶屋，步行入住 FDS Nexus。</p></div>
+<a href="https://www.google.com/maps/dir/?api=1&origin=Kyoto+Station&destination=Tengachaya+Station&travelmode=transit" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>京都→天下茶屋路線</a>
+</div>
+
+<div class="tl-item food">
+<div class="tl-time">20:30 — 21:30</div>
+<div class="tl-name">晚餐：炸豬排（天下茶屋）</div>
+<div class="tl-desc"><p>入住 FDS Nexus 後步行即達，不用再跑遠。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🍱</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=Tonkatsu+Ichiban+Tengachaya" target="_blank">Tonkatsu Ichiban（天下茶屋站（天下茶屋駅 / Tengachaya Eki）旁）</a></div>
+<div class="resto-desc">天下茶屋站（天下茶屋駅 / Tengachaya Eki）步行 2 分鐘，評分 4.4、超過 500 則評論，炸豬排外酥內嫩、份量大，還有唐揚炸雞和蝦天婦羅可以加點。有英文菜單，店員親切，抵達大阪當晚的最佳犒賞選擇。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥1,500–2,500/人</span>
+<span class="resto-tag tag-note">週四公休；晚間 16:00–20:00</span>
+<a href="https://www.google.com/maps/search/?api=1&query=Tonkatsu+Ichiban+Tengachaya" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div>  </div></div>
+</div>
+
+<div id="day4" class="tab-content">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">04</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 19（日）</div>
+<div class="day-title">大阪城 <span class="hl">×</span> 新世界（新世界 / Shinsekai）手做大阪燒 <span class="hl">×</span> 心齋橋 <span class="hl">×</span> 百年壽喜燒</div>
+<a href="https://www.google.com/maps/search/?api=1&query=FDS+Nexus+Osaka" target="_blank" class="hotel-tag">🏨 大阪 FDS Nexus（FDSネクサス）（天下茶屋）</a>
+</div></div>
+<div class="timeline">
+
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🏯</span><div class="ctx-main">從 FDS Nexus 出發前往大阪城天守閣，早去避開人潮和正午高溫</div><span class="ctx-badge warn">⚠ 09:00 前出門</span></div>
+  <div class="yahoo-header"><div class="yahoo-header-left"><span class="yahoo-time-big">09:00</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">09:15</span><span class="yahoo-time-small">着</span></div><div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 240円（IC 231円）</div><div class="yahoo-meta"><span>所要時間 <strong>13分</strong></span><span>乗換 <strong>1回</strong></span></div></div>
+  <div class="yahoo-body">
+    <div class="yahoo-row"><div class="yahoo-time-col"><span class="yahoo-time">09:00</span><span class="yahoo-action">発</span></div><div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-nankai"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">天下茶屋</div><div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>5分</span></div><div class="yahoo-train-info"><span class="yahoo-platform">4番ホーム</span><span class="yahoo-train-name">南海本線急行（なんば行）</span></div></div></div></div>
+    <div class="yahoo-row"><div class="yahoo-time-col"><span class="yahoo-time">09:05</span><span class="yahoo-action arr">着</span><span class="yahoo-time second-time">09:07</span><span class="yahoo-action">発</span></div><div class="yahoo-line-col"><div class="yahoo-station-icon transfer"></div><div class="yahoo-line line-chuo"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name">新今宮</div><div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>8分</span></div><div class="yahoo-train-info"><span class="yahoo-train-name">OsakaMetro中央線（夢洲行）</span></div></div></div></div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">谷町四丁目</div></div></div>
+  </div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>出站步行 15 分鐘至天守閣入口（廣場無遮蔭，帶帽、帶噴霧）</span><span class="af-time">09:15</span></div>
+  </div></div>
+<div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00006426&dnvStationCode=00005873&year=2026&month=7&day=19&hour=9&minute=0&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="16" y2="12"/><line x1="12" y1="12" x2="12" y2="16"/></svg>乗換案内 天下茶屋→谷町四丁目</a></div>
+</div>
+<div class="tl-item sight">
+<div class="tl-time">09:30 — 12:00</div>
+<div class="tl-name">大阪城天守閣（大阪城天守閣 / Ōsaka-jō Tenshukaku）</div>
+<div class="tl-desc"><p>09:30 趁早上相對涼的時段快步走過去，廣場無遮蔭建議帶帽、帶噴霧。天守閣內有冷氣，初訪必去。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%9F%8E" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>大阪城地圖</a>
+</div> <div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">12:04</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">12:14</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare">通常 <span class="yahoo-fare-tag dark">¥</span>240円</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>10分</strong></span>
+      <span>乗換 <strong>1回</strong></span>
+      <span>距離 <strong>4.6km</strong></span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">12:04</span>
+        <span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-chuo"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">谷町四丁目</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>1分</span>1.0km</div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">2番ホーム</span>
+            <span class="yahoo-train-name">OsakaMetro中央線 夢洲行</span>
+            <span class="yahoo-train-dest">前から1両目</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">12:05</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">12:07</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon transfer"></div>
+        <div class="yahoo-line line-sakaisuji"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">堺筋本町</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>7分</span>3.6km</div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">1番ホーム</span>
+            <span class="yahoo-train-name">OsakaMetro堺筋線 天下茶屋行</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">12:14</span>
+        <span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">動物園前 <span class="yahoo-arrival-meta">1番ホーム [ドア] 右が開く</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>步行 5 分鐘進新世界，午餐串炸＋大阪燒</span><span class="af-time">12:20</span></div>
+  </div></div>
+<div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00005873&dnvStationCode=00006955&year=2026&month=7&day=19&hour=12&minute=4&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="16" y2="12"/><line x1="12" y1="12" x2="12" y2="16"/></svg>乗換案内 谷町四丁目→動物園前</a></div>
+
+<div class="tl-item food">
+<div class="tl-time">12:30 — 14:15</div>
+<div class="tl-name">午餐：新世界（新世界 / Shinsekai）串炸 + 手做大阪燒 🔥</div>
+<div class="tl-desc"><p>在通天閣（通天閣 / Tsūtenkaku）腳下，一次體驗大阪兩大庶民美食！</p></div>
+<div class="resto-card">
+<div class="resto-icon">🥞</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E4%B8%96%E7%95%8C%E4%B8%B2%E3%81%8B%E3%81%A4%E3%83%BB%E5%A4%A7%E9%98%AA%E3%82%82%E3%82%93%E3%81%98%E3%82%83%E7%84%BC+%E5%88%9D%E4%BB%A3%E3%82%A8%E3%83%93%E3%82%B9" target="_blank">新世界（新世界 / Shinsekai）串かつ・大阪もんじゃ焼 初代エビス</a></div>
+<div class="resto-desc">通天閣（通天閣 / Tsūtenkaku）正旁邊，串炸 + 大阪燒 + 文字燒三位一體，桌邊有圖片教學讓你自己 DIY 鐵板烤大阪燒，麵糊、配料全部自己掌控，超有成就感。評分 4.4，暢飲方案 500–800 日圓，性價比超高。菜單僅日文，可以截圖用翻譯 App 點餐。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥1,500–2,500/人</span>
+<span class="resto-tag tag-note">11:00–21:00，無需預約</span>
+<span class="resto-tag tag-warn">菜單僅日文，建議帶翻譯 App</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E4%B8%96%E7%95%8C%E4%B8%B2%E3%81%8B%E3%81%A4%E3%83%BB%E5%A4%A7%E9%98%AA%E3%82%82%E3%82%93%E3%81%98%E3%82%83%E7%84%BC+%E5%88%9D%E4%BB%A3%E3%82%A8%E3%83%93%E3%82%B9" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div> <div class="tl-item sight">
+<div class="tl-time">14:15 — 15:00</div>
+<div class="tl-name">通天閣（通天閣 / Tsūtenkaku） × 新世界（新世界 / Shinsekai）</div>
+<div class="tl-desc"><p>吃飽後快速與通天閣（通天閣 / Tsūtenkaku）合照，感受昭和老大阪氣息。新世界（新世界 / Shinsekai）窄巷有一定遮蔭，比大阪城廣場友善，但 13:30 仍是午後高溫，建議快拍快走、隨時鑽進串炸店或便利商店補水。若體力許可可買票上通天閣（通天閣 / Tsūtenkaku）吹冷氣（¥1,000），順便拖到下午太陽稍低再出發心齋橋。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E9%80%9A%E5%A4%A9%E9%96%A3" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>通天閣（通天閣 / Tsūtenkaku）地圖</a>
+</div>
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🛍</span><div class="ctx-main">吃飽通天閣後，轉移心齋橋購物</div><span class="ctx-badge ok">4分</span></div>
+  <div class="yahoo-header"><div class="yahoo-header-left"><span class="yahoo-time-big">15:00</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">15:04</span><span class="yahoo-time-small">着</span></div><div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 240円（IC 231円）</div><div class="yahoo-meta"><span>所要時間 <strong>4分</strong></span><span>乗換 <strong>0回</strong></span></div></div>
+  <div class="yahoo-body">
+    <div class="yahoo-row"><div class="yahoo-time-col"><span class="yahoo-time">15:00</span><span class="yahoo-action">発</span></div><div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-midosuji"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">動物園前</div><div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>4分</span></div><div class="yahoo-train-info"><span class="yahoo-train-name">OsakaMetro御堂筋線（千里中央行）</span></div></div></div></div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">心斎橋</div></div></div></div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>出站即心齋橋筋商店街</span><span class="af-time">15:05</span></div></div></div>
+<div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00006955&dnvStationCode=00004158&year=2026&month=7&day=19&hour=15&minute=0&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="16" y2="12"/><line x1="12" y1="12" x2="12" y2="16"/></svg>乗換案内 動物園前→心斎橋</a></div>
+</div>
+
+<div class="tl-item sight">
+<div class="tl-time">15:00 — 17:30</div>
+<div class="tl-name">心齋橋 × 道頓堀（道頓堀 / Dōtonbori） 購物</div>
+<div class="tl-desc"><p>心齋橋筋商店街掃藥妝、買衣服，道頓堀與固力果跑跑男合照。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%BF%83%E6%96%8E%E6%A9%8B" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>心齋橋地圖</a>
+</div>
+<div class="warn-box">
+🛒 <strong>順路採購：</strong>心齋橋筋逛完後，往難波方向步行 5 分鐘至 <strong>Central Square Life（セントラルスクエアライフ / Nankai Namba 地下 1F）</strong>，在機場前一天採購大阪調味料＆零食伴手禮，隔天行李寄難波站後輕鬆搭車。推薦：大阪燒醬、章魚燒醬、昆布だし醬油、鶴橋燒肉醬、各式地方限定仙貝。<br><span class="warn-small">⚠️ 液體調味料記得放託運；有免稅服務，購物當天 17:45 前完成手續。</span>
+</div>
+
+<div class="yahoo-panel">
+  <div class="yahoo-context"><span class="ctx-icon">🍲</span><div class="ctx-main">心齋橋逛完，搭車前往梅田お初天神晚餐</div><span class="ctx-badge ok">4分</span></div>
+  <div class="yahoo-header"><div class="yahoo-header-left"><span class="yahoo-time-big">18:00</span><span class="yahoo-time-small">発</span><span class="yahoo-arrow">➔</span><span class="yahoo-time-big">18:04</span><span class="yahoo-time-small">着</span></div><div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 240円（IC 231円）</div><div class="yahoo-meta"><span>所要時間 <strong>4分</strong></span><span>乗換 <strong>0回</strong></span></div></div>
+  <div class="yahoo-body">
+    <div class="yahoo-row"><div class="yahoo-time-col"><span class="yahoo-time">18:00</span><span class="yahoo-action">発</span></div><div class="yahoo-line-col"><div class="yahoo-station-icon"></div><div class="yahoo-line line-midosuji"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">心斎橋</div><div class="yahoo-transit-details"><div class="yahoo-duration-dist"><span>4分</span></div><div class="yahoo-train-info"><span class="yahoo-train-name">OsakaMetro御堂筋線（江坂行）</span></div></div></div></div>
+    <div class="yahoo-row"><div class="yahoo-time-col"></div><div class="yahoo-line-col"><div class="yahoo-station-icon arrival"></div></div><div class="yahoo-content-col"><div class="yahoo-station-name subway">梅田</div></div></div></div>
+  <div class="yahoo-after"><div class="af-steps">
+    <div class="af-step"><span>🚶</span><span>步行 8 分鐘至お初天神通り</span><span class="af-time">18:10</span></div></div></div>
+<div class="yahoo-btn-row"><a href="https://www.navitime.co.jp/transfer/searchlist?orvStationCode=00004158&dnvStationCode=00007402&year=2026&month=7&day=19&hour=18&minute=0&basis=1&freePass=0&sort=4&wspeed=100&airplane=1&sprexprs=1&utrexprs=1&othexprs=1&mtrplbus=1&intercitybus=1&ferry=1" target="_blank" class="map-btn navitime-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="16" y2="12"/><line x1="12" y1="12" x2="12" y2="16"/></svg>乗換案内 心斎橋→梅田</a></div>
+</div>
+
+<div class="tl-item food">
+<div class="tl-time">18:00 — 20:30</div>
+<div class="tl-name">晚餐：肉のあさつ 梅田お初天神（お初天神 / Ohatsu Tenjin）店</div>
+<div class="tl-desc"><p></p></div>
+<div class="resto-card">
+<div class="resto-icon">🍲</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E8%82%89%E3%81%AE%E3%81%82%E3%81%95%E3%81%A4+%E6%A2%85%E7%94%B0%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank">黄金出汁しゃぶと江戸前寿司 肉のあさつ 梅田お初天神（お初天神 / Ohatsu Tenjin）店</a></div>
+<div class="resto-desc">黑毛和牛涮涮鍋＋江戶前壽司＋肉壽司，三種出汁可選（黃金鰹魚出汁、昆布出汁、豬骨出汁），全席個室。招牌套餐：黑毛和牛涮涮鍋＋全 30 種海鮮壽司＆肉壽司食べ放題 ¥7,800，CP 值超高。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥6,800–7,800/人（食べ放題含飲）</span>
+<span class="resto-tag tag-note">東梅田站（東梅田駅 / Higashi-Umeda Eki）（梅田駅 / Umeda Eki）步行 5 分鐘，可網路預約</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E8%82%89%E3%81%AE%E3%81%82%E3%81%95%E3%81%A4+%E6%A2%85%E7%94%B0%E3%81%8A%E5%88%9D%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+<div class="warn-box">⚠️ 建議提前於 Hot Pepper 或官網預約，食べ放題套餐需事前選好。</div>
+</div>  </div></div>
+</div>
+
+<div id="day5" class="tab-content">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">05</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 20（一）</div>
+<div class="day-title">日本環球影城 <span class="hl">USJ</span></div>
+<a href="https://www.google.com/maps/search/?api=1&query=FDS+Nexus+Osaka" target="_blank" class="hotel-tag">🏨 大阪 FDS Nexus（FDSネクサス）（天下茶屋）</a>
+</div></div>
+<div class="timeline">
+
+<div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">06:27</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">06:53</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 380円</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>26分</strong></span>
+      <span>乗換 <strong>2回</strong></span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">06:27</span>
+        <span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-nankai"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">天下茶屋</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>2分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">4番ホーム</span>
+            <span class="yahoo-train-name">南海本線空港線急行 (なんば行)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">06:29</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">06:34</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon transfer"></div>
+        <div class="yahoo-line line-kanjo"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">新今宮</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>10分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">3/4番ホーム</span>
+            <span class="yahoo-train-name">JR大阪環状線外回り</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">06:44</span><span class="yahoo-action">着</span>
+        <span class="yahoo-time second-time">06:48</span><span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon transfer"></div>
+        <div class="yahoo-line line-yumesaki"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">西九条</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>5分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-train-name">JRゆめ咲線 (桜島行)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">06:53</span>
+        <span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">ユニバーサルシティ <span class="yahoo-arrival-meta">步行前往大門</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tl-item transport">
+<div class="tl-time">06:01 出發</div>
+<div class="tl-name">天下茶屋 → 環球城站（ユニバーサルシティ駅 / Yunibāsaru Shiti Eki）</div>
+<div class="tl-日限定潑水遊行。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>USJ 地圖</a>
+<div class="warn-box">⚠️ 任天堂世界需另外抽入場整理券，一入園立刻先抽！哈利波特建議開園前 30 分鐘在門口候場。</div>
+</div> <div class="tl-item food">
+<div class="tl-time">園內午餐</div>
+<div class="tl-name">三根掃帚（The Three Broomsticks）</div>
+<div class="tl-desc"><p>哈利波特園區內的主題餐廳，必點奶油啤酒（Butterbeer，熱或冷均可），搭配火雞腿或烤雞。建議 11:30 前去卡位，避開午餐高峰排長龍。</p></div>
+</div> </div></div>
+</div>
+
+<div id="day6" class="tab-content">
+<div class="day-block">
+<div class="day-head">
+<div class="day-num"><span class="num">06</span><span class="label">Day</span></div>
+<div class="day-meta">
+<div class="day-date">7 / 21（二）</div>
+<div class="day-title">輕鬆早午餐 <span class="hl">×</span> 關西機場</div>
+<div class="day-date" class="mt6">✈ IT213 — 19:50<span class="tz tz-jp">日本</span> 起飛</div>
+</div></div>
+<div class="timeline">
+
+<div class="flight-departure-bar">
+  <span class="fdb-plane">✈</span>
+  <div class="fdb-times">
+    <div class="fdb-time-item"><strong>19:50</strong><span>IT213 起飛</span></div>
+    <span class="fdb-arrow">←</span>
+    <div class="fdb-time-item"><strong>17:00</strong><span>建議到達空港</span></div>
+    <span class="fdb-arrow">←</span>
+    <div class="fdb-time-item"><strong>15:41</strong><span>関西空港着</span></div>
+    <span class="fdb-arrow">←</span>
+    <div class="fdb-time-item"><strong>15:05</strong><span>なんば発</span></div>
+  </div>
+  <span class="fdb-ok">✓ 約 135 分緩衝</span>
+</div>
+
+<div class="yahoo-panel">
+  <div class="yahoo-header">
+    <div class="yahoo-header-left">
+      <span class="yahoo-time-big">15:05</span><span class="yahoo-time-small">発</span>
+      <span class="yahoo-arrow">➔</span>
+      <span class="yahoo-time-big">15:41</span><span class="yahoo-time-small">着</span>
+    </div>
+    <div class="yahoo-fare"><span class="yahoo-fare-tag">¥</span>通常 1,610円（乗車券 910 + 特急 700）</div>
+    <div class="yahoo-meta">
+      <span>所要時間 <strong>36分</strong></span>
+      <span>乗換 <strong>0回</strong></span>
+      <span class="meta-note">✈ 19:50発 → 17:20 到空港で安心，15:05発 で 15:41着 → 充裕</span>
+    </div>
+  </div>
+  
+  <div class="yahoo-body">
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">15:05</span>
+        <span class="yahoo-action">発</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon"></div>
+        <div class="yahoo-line line-nankai"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">なんば (南海)</div>
+        <div class="yahoo-transit-details">
+          <div class="yahoo-duration-dist"><span>36分</span></div>
+          <div class="yahoo-train-info">
+            <span class="yahoo-platform">9番ホーム</span>
+            <span class="yahoo-train-name">特急ラピートα27号 （関西空港行）</span>
+            <span class="yahoo-train-dest">全車指定席・事前購入必須</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yahoo-row">
+      <div class="yahoo-time-col">
+        <span class="yahoo-time">15:41</span>
+        <span class="yahoo-action arr">着</span>
+      </div>
+      <div class="yahoo-line-col">
+        <div class="yahoo-station-icon arrival"></div>
+      </div>
+      <div class="yahoo-content-col">
+        <div class="yahoo-station-name subway">関西空港</div>
+        <span class="yahoo-addr">抵達辦理報到手續</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tl-item transport">
+<div class="tl-time">10:00 — 10:30</div>
+<div class="tl-name">退房 → 南海難波站（南海難波駅 / Nankai Namba Eki）寄放行李</div>
+<div class="tl-desc"><p>天下茶屋站（天下茶屋駅 / Tengachaya Eki）搭南海電鐵（南海電鉄 / Nankai Dentetsu）至南海難波站（南海難波駅 / Nankai Namba Eki）（4 分鐘），在車站找大型置物櫃 Coin Locker 寄放行李。假日可能被搶空，備案：附近 7-11 ecbo cloak。</p></div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E6%B5%B7%E9%9B%A3%E6%B3%A2%E9%A7%85" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>南海難波站（南海難波駅 / Nankai Namba Eki）地圖</a>
+</div>
+ 
+<div class="tl-item food">
+<div class="tl-time">11:00 — 12:30</div>
+<div class="tl-name">早午餐（最後一頓！）</div>
+<div class="tl-desc"><p>旅程最後一餐，不用趕，慢慢吃。</p></div>
+<div class="resto-card">
+<div class="resto-icon">🍜</div>
+<div class="resto-info">
+<div class="resto-name"><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%95%E3%81%BF%E4%BA%AD%E3%83%9E%E3%83%84%E3%83%90%E3%83%A4" target="_blank">うさみ亭マツバヤ（松葉家）</a></div>
+<div class="resto-desc">創業 1893 年，大阪きつねうどん的發源店，評分 4.2。昭和年代老建築，湯頭清澈鮮甜，炸豆皮烏龍麵是招牌，也有牡蠣烏龍麵等季節限定。在地老客人常客居多，完全不像觀光陷阱。南海難波站（南海難波駅 / Nankai Namba Eki）步行約 5 分鐘。</div>
+<div class="resto-meta">
+<span class="resto-tag tag-price">¥800–1,500</span>
+<span class="resto-tag tag-warn">週日公休，7/21 週二 OK；11:00 開門</span>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%86%E3%81%95%E3%81%BF%E4%BA%AD%E3%83%9E%E3%83%84%E3%83%90%E3%83%A4" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>地圖</a>
+</div></div></div>
+</div>
+
+ <div class="tl-item sight">
+<div class="tl-time">12:30 — 14:30</div>
+<div class="tl-name">難波八阪神社（難波八阪神社 / Namba Yasaka-jinja） / 阿倍野 Haruka（はるか）s 300（あべのハルカス / Abeno Haruka（はるか）su） 300（二選一）</div>
+<div class="tl-desc">
+<p><strong>選項 A（較熱）</strong>：步行至難波八阪神社（難波八阪神社 / Namba Yasaka-jinja）（巨大獅子頭神殿，視覺震撼），快拍快走，拍完立刻找附近咖啡廳坐下來避暑吃日式布丁。</p>
+<p><strong>選項 B（怕熱強烈推薦）</strong>：搭御堂筋線（御堂筋線 / Midōsuji-sen） 3 站至天王寺站，前往阿倍野 Haruka（はるか）s 300（あべのハルカス / Abeno Haruka（はるか）su） 300 展望台（60 樓全室內冷氣，360° 俯瞰大阪，評分 4.6）。旅程最後一天不用受苦，在冷氣房看風景是最完美的收尾。</p>
+</div>
+<a href="https://www.google.com/maps/search/?api=1&query=%E9%9B%A3%E6%B3%A2%E5%85%AB%E9%98%AA%E7%A5%9E%E7%A4%BE" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>難波八阪神社（難波八阪神社 / Namba Yasaka-jinja）</a>
+<a href="https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%B9%E3%81%AE%E3%83%8F%E3%83%AB%E3%82%AB%E3%82%B9300" target="_blank" class="map-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>阿倍野 Haruka（はるか）s 300（あべのハルカス / Abeno Haruka（はるか）su） 300</a>
+<div class="warn-box">☀️ 怕熱的話強烈建議選 Haruka（はるか）s，¥2,000 買一個下午的冷氣 + 絕景，超划算。</div>
+</div> <div class="tl-item transport">
+<div class="tl-time">14:30 — 15:00</div>
+<div class="tl-name">返回難波站取行李 → 準備出發</div>
+<div class="tl-desc"><p>取回寄放行李，前往南海難波站（南海難波駅）搭 <strong>15:05 ラピートα27号</strong>。✈ 航班 19:50<span class="tz tz-jp">日本</span> 起飛，建議 <strong>17:00–17:20 到達關西空港</strong>（Check-in + 安檢 + 國際線出境）留足 2.5 小時。15:05発→15:41着 剛好充裕。</p></div>
+</div>  </div></div> </div>
+
+</div>
+<footer><p>京都 <span>×</span> 大阪 · 7/16 — 7/21 · 2026</p></footer>
+
+
+<script>
+function openTab(evt, dayId) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+    tabcontent[i].classList.remove("active");
+  }
+  tablinks = document.getElementsByClassName("tab-btn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  document.getElementById(dayId).style.display = "block";
+  document.getElementById(dayId).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
+</script>
+</body>
+</html>
