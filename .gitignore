@@ -1,0 +1,5 @@
+.DS_Store
+
+# Build artifacts (staticrypt temp files)
+**/_inline_tmp.html
+**/.staticrypt.json
