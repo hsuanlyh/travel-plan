@@ -214,3 +214,26 @@ footer span{color:var(--red);}
 
 /* Yahoo meta note (green small) */
 .meta-note { color: #3d6b4f; font-size: 11px; }
+
+/* =========================================
+   Suggestion Button
+   ========================================= */
+.suggest-bar {
+  text-align: center;
+  padding: 32px 24px 48px;
+}
+.suggest-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 3px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.suggest-btn:hover { background: var(--red); color: var(--paper); }
+.suggest-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
