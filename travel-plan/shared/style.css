@@ -1,0 +1,216 @@
+:root{--ink:#1a1410;--ink2:#4a3f35;--ink3:#8a7b6e;--paper:#faf7f2;--paper2:#f2ede4;--paper3:#e8e0d2;--red:#c0392b;--gold:#b8860b;--blue:#2c5f8a;--green:#3d6b4f;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--paper);color:var(--ink);font-family:'Noto Sans TC',sans-serif;font-weight:300;line-height:1.8;}
+header{background:var(--ink);color:var(--paper);padding:56px 40px 48px;text-align:center;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,0.015) 40px,rgba(255,255,255,0.015) 41px);}
+.header-label{font-size:11px;letter-spacing:6px;color:var(--paper3);text-transform:uppercase;margin-bottom:20px;}
+header h1{font-family:'Noto Serif TC',serif;font-size:clamp(28px,5vw,52px);font-weight:700;letter-spacing:4px;line-height:1.2;margin-bottom:16px;}
+header h1 span{color:var(--red);}
+.header-sub{font-size:13px;color:var(--ink3);letter-spacing:3px;}
+.header-dates{display:inline-flex;gap:0;margin-top:28px;border:1px solid rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;}
+.header-dates span{padding:6px 20px;font-size:12px;letter-spacing:2px;color:var(--paper);}
+.header-dates span:first-child{background:var(--red);}
+.container{max-width:860px;margin:0 auto;padding:0 24px 80px;}
+
+/* Tabs CSS */
+.tabs-container { margin: 24px auto 0; max-width: 860px; padding: 0 24px; }
+.tabs { display: flex; overflow-x: auto; gap: 8px; border-bottom: 2px solid var(--paper3); padding-bottom: 2px; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 80px; background: transparent; border: none; padding: 12px 8px; color: var(--ink3); font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.3s; text-align: center; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+.tab-btn span { display: block; font-size: 11px; font-weight: 400; margin-top: 2px; }
+.tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+.tab-btn:hover:not(.active) { color: var(--ink); }
+.tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+.day-block{margin-top:40px;position:relative;}
+.day-block::before{content:'';position:absolute;left:52px;top:50px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--paper3),transparent);}
+.day-head{display:flex;align-items:flex-start;gap:24px;margin-bottom:4px;}
+.day-num{flex-shrink:0;width:52px;text-align:center;}
+.day-num .num{font-family:'Noto Serif TC',serif;font-size:36px;font-weight:700;color:var(--ink);line-height:1;display:block;}
+.day-num .label{font-size:9px;letter-spacing:2px;color:var(--ink3);text-transform:uppercase;display:block;margin-top:2px;}
+.day-meta{flex:1;padding-top:4px;}
+.day-date{font-size:12px;color:var(--ink3);letter-spacing:2px;margin-bottom:4px;}
+.day-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:600;line-height:1.3;}
+.day-title .hl{color:var(--red);}
+.hotel-tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--ink3);margin-top:8px;padding:3px 10px;background:var(--paper2);border-radius:2px;border:1px solid var(--paper3);text-decoration:none;}
+.hotel-tag:hover{color:var(--blue);border-color:var(--blue);}
+.timeline{margin-top:20px;padding-left:76px;}
+.tl-item{position:relative;margin-bottom:20px;padding:16px 18px;background:white;border-radius:3px;border:1px solid var(--paper3);border-left:3px solid var(--paper3);box-shadow:0 1px 4px rgba(0,0,0,0.04);transition:border-left-color 0.2s,box-shadow 0.2s;}
+.tl-item:hover{box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.tl-item::before{content:'';position:absolute;left:-28px;top:22px;width:8px;height:8px;border-radius:50%;background:var(--paper3);border:2px solid var(--paper);}
+.tl-item.transport{border-left-color:var(--blue);}
+.tl-item.transport::before{background:var(--blue);}
+.tl-item.food{border-left-color:var(--gold);}
+.tl-item.food::before{background:var(--gold);}
+.tl-item.sight{border-left-color:var(--red);}
+.tl-item.sight::before{background:var(--red);}
+.tl-item.note{border-left-color:var(--green);background:#f7fbf8;}
+.tl-item.note::before{background:var(--green);}
+.tl-time{font-size:11px;letter-spacing:1px;color:var(--ink3);margin-bottom:4px;}
+.tl-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.tl-desc{font-size:13px;color:var(--ink2);line-height:1.7;}
+.tl-desc p+p{margin-top:6px;}
+.resto-card{margin-top:12px;padding:12px 14px;background:var(--paper2);border-radius:4px;border:1px solid var(--paper3);display:flex;align-items:flex-start;gap:12px;}
+.resto-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.resto-info{flex:1;min-width:0;}
+.resto-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:2px;}
+.resto-name a{color:var(--ink);text-decoration:none;}
+.resto-name a:hover{color:var(--blue);}
+.resto-desc{font-size:12px;color:var(--ink2);line-height:1.6;}
+.resto-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center;}
+.resto-tag{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500;letter-spacing:0.3px;}
+.tag-price{background:rgba(61,107,79,0.1);color:var(--green);}
+.tag-note{background:rgba(184,134,11,0.12);color:var(--gold);}
+.tag-warn{background:rgba(192,57,43,0.1);color:var(--red);}
+.map-btn{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--blue);text-decoration:none;padding:3px 9px;border:1px solid rgba(44,95,138,0.3);border-radius:2px;transition:all 0.2s;font-weight:400;}
+.map-btn:hover{background:var(--blue);color:white;border-color:var(--blue);}
+.map-btn svg{width:11px;height:11px;flex-shrink:0;}
+
+.transport-detail{margin-top:10px;padding:10px 14px;background:rgba(44,95,138,0.05);border-left:3px solid var(--blue);border-radius:0 3px 3px 0;font-size:12px;color:var(--ink2);line-height:1.8;}
+.transport-detail .tr-step{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;}
+.transport-detail .tr-step:last-child{margin-bottom:0;}
+.transport-detail .tr-icon{flex-shrink:0;font-size:13px;margin-top:1px;}
+.transport-detail .tr-text{flex:1;}
+.transport-detail .tr-time{color:var(--ink3);font-size:11px;margin-left:4px;}
+
+.warn-box{margin-top:12px;padding:10px 14px;background:rgba(192,57,43,0.06);border-left:3px solid var(--red);border-radius:0 2px 2px 0;font-size:12px;color:var(--red);line-height:1.6;}
+
+.yahoo-panel { margin: 16px 0 8px; background: #fff; border: 1px solid #d4d4d4; border-radius: 4px; font-family: 'Noto Sans TC', sans-serif; box-shadow: 0 1px 6px rgba(0,0,0,0.06); overflow: hidden; }
+
+.yahoo-context { padding: 9px 16px; background: var(--paper2); border-bottom: 1px solid var(--paper3); display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ink2); flex-wrap: wrap; }
+.yahoo-context .ctx-icon { font-size: 15px; flex-shrink: 0; }
+.yahoo-context .ctx-main { flex: 1; line-height: 1.6; }
+.yahoo-context .ctx-main strong { color: var(--ink); }
+.yahoo-context .ctx-badge { font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600; white-space: nowrap; }
+.yahoo-context .ctx-badge.ok { background: rgba(61,107,79,0.12); color: var(--green); }
+.yahoo-context .ctx-badge.warn { background: rgba(192,57,43,0.1); color: var(--red); }
+
+.yahoo-header { padding: 12px 16px; background: #fff; border-bottom: 1px solid #e8e8e8; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+.yahoo-header-left { display: flex; align-items: baseline; gap: 4px; }
+.yahoo-time-big { font-size: 20px; font-weight: 700; color: #111; letter-spacing: -0.5px;}
+.yahoo-time-small { font-size: 13px; font-weight: 400; color: #333; margin-right: 4px;}
+.yahoo-arrow { color: #888; font-size: 14px; margin: 0 6px; }
+.yahoo-fare { font-size: 13px; font-weight: 500; color: #333; }
+.yahoo-fare-tag { background: #3d6b4f; color: white; padding: 1px 5px; font-size: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle;}
+.yahoo-meta { font-size: 12px; color: #555; width: 100%; margin-top: 8px; display: flex; gap: 14px; flex-wrap: wrap; }
+.yahoo-meta strong { color: #111; font-weight: 600; font-size: 13px; }
+
+.yahoo-after { padding: 9px 16px; background: var(--paper2); border-top: 1px solid var(--paper3); display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--ink2); flex-wrap: wrap; }
+.yahoo-after .af-steps { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.yahoo-after .af-step { display: flex; align-items: baseline; gap: 7px; }
+.yahoo-after .af-step span:first-child { flex-shrink: 0; font-size: 13px; }
+.yahoo-after .af-step .af-time { color: var(--ink3); font-size: 11px; margin-left: auto; white-space: nowrap; padding-left: 8px; }
+.yahoo-after .af-step strong { color: var(--ink); }
+
+.yahoo-body { padding: 12px 16px 4px; }
+.yahoo-row { display: flex; align-items: stretch; }
+.yahoo-time-col { width: 44px; flex-shrink: 0; padding-top: 2px; text-align: left; }
+.yahoo-time { font-size: 15px; font-weight: 700; color: #111; display: block; line-height: 1.1; letter-spacing:-0.5px; }
+.yahoo-action { font-size: 10px; color: #666; display: block; margin-top: 2px;}
+.yahoo-action.arr { background: #c694a5; color: white; border-radius: 2px; padding: 1px 3px; display: inline-block; margin-top: 4px;}
+
+.yahoo-line-col { width: 24px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; margin: 0 10px; }
+.yahoo-station-icon { width: 12px; height: 12px; background: white; border: 3px solid #999; border-radius: 50%; flex-shrink: 0; margin-top: 4px; z-index: 2; }
+.yahoo-line { flex: 1; width: 6px; margin-top: -6px; margin-bottom: -6px; z-index: 1; }
+
+.yahoo-content-col { flex: 1; padding-bottom: 16px; margin-top: -2px;}
+.yahoo-station-name { font-size: 16px; font-weight: 700; color: #1059a3; display: flex; align-items: center; flex-wrap: wrap; line-height: 1.3;}
+.yahoo-arrival-meta { font-size: 12px; color: #333; margin-left: 8px; font-weight: 400; color: #555;}
+.yahoo-addr { font-size: 11px; color: #888; display: block; margin-top: 2px;}
+
+.yahoo-transit-details { margin-top: 8px; display: flex; gap: 12px; align-items: flex-start;}
+.yahoo-duration-dist { width: 42px; flex-shrink:0; text-align: right; font-size: 11px; color: #888; line-height: 1.4; padding-top: 6px; }
+.yahoo-duration-dist span { display: block; font-size: 13px; color: #333; font-weight: 500;}
+
+.yahoo-train-info { flex: 1; background: #f9f9f9; padding: 8px 10px; border-radius: 4px; }
+.yahoo-platform { display: inline-block; background: #666; color: white; font-size: 10px; padding: 2px 6px; border-radius: 2px; margin-bottom: 4px; }
+.yahoo-train-name { font-size: 13px; font-weight: 700; color: #222; display: block; line-height: 1.4;}
+.yahoo-train-dest { font-size: 11px; color: #666; display: block; margin-top: 2px; }
+
+/* Line Colors */
+.line-chuo { background-color: #249942; }
+.line-sakaisuji { background-color: #8c5024; }
+.line-walk { border-left: 4px dotted #aaa; background: transparent !important; width: 0 !important; margin-left: 3px !important; margin-right: 3px !important; }
+.line-jr { background-color: #0072e3; }
+.line-nankai { background-color: #f36c21; }
+.line-haruka { background-color: #1a4f9c; }
+.line-midosuji { background-color: #e5171f; }
+.line-karasuma { background-color: #4b8a3e; }
+.line-yumesaki { background-color: #00a2d2; }
+.line-kanjo { background-color: #f06422; }
+.line-bus { background-color: #009944; }
+.line-torokko { background-color: #d35d54; }
+
+/* yahoo-panel + tl-item gap */
+.yahoo-panel + .tl-item { margin-top: 8px; }
+
+.day-divider{display:none;}
+footer{background:var(--ink);color:var(--ink3);text-align:center;padding:32px;font-size:12px;letter-spacing:2px;margin-top:40px;}
+footer span{color:var(--red);}
+
+.navitime-btn { background: rgba(0,100,200,0.06); border-color: rgba(0,100,200,0.25); color: #0064c8; }
+.navitime-btn:hover { background: #0064c8; color: white; border-color: #0064c8; }
+.yahoo-after .map-btn, .yahoo-after .navitime-btn { margin-top: 6px; }
+
+.tz { display:inline-block; font-size:9px; font-weight:700; letter-spacing:0.3px;
+      padding:1px 4px; border-radius:2px; vertical-align:middle; margin:0 1px; line-height:1.6; }
+.tz-tw { background:rgba(0,150,136,0.12); color:#00796b; border:1px solid rgba(0,150,136,0.3); }
+.tz-jp { background:rgba(183,28,28,0.1); color:#b71c1c; border:1px solid rgba(183,28,28,0.25); }
+
+.flight-departure-bar { display: flex; align-items: center; gap: 12px; background: var(--paper2); border: 1px solid var(--paper3); border-radius: 4px; padding: 12px 16px; margin: 16px 0; font-size: 13px; flex-wrap: wrap; }
+.fdb-plane { font-size: 20px; flex-shrink: 0; }
+.fdb-times { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex: 1; }
+.fdb-time-item { text-align: center; }
+.fdb-time-item strong { display: block; font-size: 16px; font-weight: 700; color: var(--ink); }
+.fdb-time-item span { font-size: 11px; color: var(--ink3); }
+.fdb-arrow { color: var(--ink3); font-size: 16px; }
+
+/* =========================================
+   Extracted from inline styles
+   ========================================= */
+
+/* Station icon variants */
+.yahoo-station-icon.arrival   { background: #e5171f; border-color: #e5171f; }
+.yahoo-station-icon.transfer  { background: #ccc; border: none; border-radius: 2px; height: 10px; width: 14px; }
+
+/* Station name: subway blue */
+.yahoo-station-name.subway,
+.subway { color: #1166b6; }
+
+/* Second departure time row */
+.yahoo-time.second-time { margin-top: 6px; }
+
+/* Navitime button wrapper */
+.yahoo-btn-row { padding: 6px 16px 10px; }
+
+/* Header flight info bar */
+.header-flights {
+  margin-top: 20px;
+  display: inline-flex;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--paper3);
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Header separator */
+.header-sep { color: rgba(255,255,255,0.2); }
+
+/* General margin-top 6px utility */
+.mt6 { margin-top: 6px; }
+
+/* Fare tag dark green variant */
+.yahoo-fare-tag.dark { background: #245b27; }
+
+/* Flight departure bar: status ok text */
+.fdb-ok { margin-left: auto; font-size: 11px; color: var(--green); font-weight: 600; }
+
+/* Warn box small text */
+.warn-small { font-size: 11px; opacity: 0.8; }
+
+/* Yahoo meta note (green small) */
+.meta-note { color: #3d6b4f; font-size: 11px; }
