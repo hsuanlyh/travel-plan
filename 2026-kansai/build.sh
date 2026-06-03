@@ -39,11 +39,16 @@ PYEOF
 
 echo "🔒 步驟 2：staticrypt 加密（密碼藏在 URL hash）..."
 
-# Step A：加密，寫出檔案（不加 --share，避免 v3 只輸出 hash 不寫檔）
+# Fixed salt — keeps the URL hash identical across every rebuild.
+# Same password + same salt = same hash = share link never changes.
+FIXED_SALT="6b616e73616932303236657665727964"
+
+# Step A: encrypt, write file
 cd "$DIR"
 mkdir -p _enc_out
 staticrypt "_inline_tmp.html" \
   --password "$PASSWORD" \
+  --salt "$FIXED_SALT" \
   --remember false \
   --directory "_enc_out" 2>&1
 
@@ -58,9 +63,10 @@ fi
 mv "$ENCRYPTED" "$OUT"
 rm -rf "$DIR/_enc_out"
 
-# Step B：用同一個 salt（存在 .staticrypt.json）取得 share hash
-SHARE_HASH=$(staticrypt "_inline_tmp.html" \
+# Step B: derive share hash using same fixed salt
+SHARE_HASH=$(staticrypt "$OUT" \
   --password "$PASSWORD" \
+  --salt "$FIXED_SALT" \
   --remember false \
   --share 2>&1 | grep "^#staticrypt_pwd=")
 
