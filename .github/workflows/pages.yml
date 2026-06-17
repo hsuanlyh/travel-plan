@@ -33,9 +33,11 @@ jobs:
           for id in $ids; do
             gh api -X POST \
               repos/${{ github.repository }}/deployments/${id}/statuses \
-              -f state=inactive || true
+              -f state=inactive > /dev/null || true
+            echo -n "DELETE $id → "
             gh api -X DELETE \
-              repos/${{ github.repository }}/deployments/${id} || true
+              repos/${{ github.repository }}/deployments/${id} \
+              --include 2>&1 | head -1 || true
           done
         env:
           GH_TOKEN: ${{ github.token }}
