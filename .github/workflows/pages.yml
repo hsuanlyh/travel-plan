@@ -31,12 +31,11 @@ jobs:
           ids=$(gh api repos/${{ github.repository }}/deployments \
             --jq '.[].id')
           for id in $ids; do
-            # mark inactive first (required before deletion)
             gh api -X POST \
               repos/${{ github.repository }}/deployments/${id}/statuses \
-              -f state=inactive 2>/dev/null || true
+              -f state=inactive || true
             gh api -X DELETE \
-              repos/${{ github.repository }}/deployments/${id} 2>/dev/null || true
+              repos/${{ github.repository }}/deployments/${id} || true
           done
         env:
           GH_TOKEN: ${{ github.token }}
