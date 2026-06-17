@@ -1,0 +1,51 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  deployments: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cleanup old deployments
+        run: |
+          ids=$(gh api repos/${{ github.repository }}/deployments \
+            --jq '.[].id')
+          for id in $ids; do
+            # mark inactive first (required before deletion)
+            gh api -X POST \
+              repos/${{ github.repository }}/deployments/${id}/statuses \
+              -f state=inactive 2>/dev/null || true
+            gh api -X DELETE \
+              repos/${{ github.repository }}/deployments/${id} 2>/dev/null || true
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
