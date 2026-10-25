@@ -6,3 +6,7 @@
 # staticrypt build artifacts
 **/_inline_tmp.html
 **/.staticrypt.json
+
+# Local plaintext sources for scripts/trip.py
+*/source.html
+*/source.html.bak
